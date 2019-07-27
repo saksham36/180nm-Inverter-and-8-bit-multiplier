@@ -1,0 +1,159 @@
+//Model a 2x1 Mux using gate level modelling
+module mux (X,A,B,S);
+input A, B,S;
+output X;
+wire sno, C, D;
+and g1(C, S, A);
+not g2(sno, S);
+and g3(D, sno, B);
+or g4(X, C, D);
+endmodule
+
+
+
+//Model a Half Adder using 2x1 Mux
+module HA (S,Cout,A,B);
+input A, B;
+output S,Cout;
+wire B_not;
+mux m1 (.X(Cout), .A(B), .B(1'b0), .S(A));
+mux m2 (.X(B_not), .A(1'b0), .B(1'b1), .S(B));
+mux m3 (.X(S), .A(B_not), .B(B), .S(A));
+endmodule
+
+
+
+// Creating an OR gate from 2x1 MUX
+module mux_or(X,A,B);
+output X;
+input A, B;
+mux mor (.X(X), .A(1'b1), .B(B), .S(A));
+endmodule
+
+
+
+//Model a Full Adder using 2x1 Mux
+module FA (S,Cout,A,B,Cin);
+input A, B, Cin;
+output S, Cout;
+wire x1,x2,x3;
+HA ha1(.S(x1), .Cout(x2), .A(A), .B(B));
+HA ha2(.S(S), .Cout(x3), .A(x1), .B(Cin));
+mux_or mor1(.X(Cout), .A(x3), .B(x2));
+endmodule
+
+
+
+//8 Bit adder
+module add (S,Cout,A,C,B);
+input [7:0]A;
+input [6:0] B;
+input C;
+output [7:0]S;
+output Cout;
+wire c1, c2, c3, c4, c5, c6, c7;
+HA h1(S[0], c1, A[0], B[0]);
+FA f1(S[1], c2, A[1], B[1], c1);
+FA f2(S[2], c3, A[2], B[2], c2);
+FA f3(S[3], c4, A[3], B[3], c3);
+FA f4(S[4], c5, A[4], B[4], c4);
+FA f5(S[5], c6, A[5], B[5], c5);
+FA f6(S[6], c7, A[6], B[6], c6);
+FA f7(S[7], Cout, A[7], C, c7);
+endmodule
+
+
+
+// Creating an AND gate from 2x1 MUX
+module mux_and(X,A,B);
+output X;
+input A, B;
+mux mand (.X(X), .A(B), .B(1'b0), .S(A));
+endmodule
+
+
+
+
+// 1x8 AND
+module AND18 (X,B,A);
+output [7:0]X;
+input [7:0] B;
+input A;
+mux_and ma0 (X[0], A,  B[0]);
+mux_and ma1 (X[1], A,  B[1]);
+mux_and ma2  (X[2], A,  B[2]);
+mux_and ma3  (X[3], A,  B[3]);
+mux_and ma4  (X[4], A,  B[4]);
+mux_and ma5 (X[5], A,  B[5]);
+mux_and ma6  (X[6], A,  B[6]);
+mux_and ma7  (X[7], A,  B[7]);
+endmodule
+
+
+
+// 8 Bit Array Multiplication
+module multiply(output[15:0]M , input[7:0] A,B);
+wire [7:0]y0,y1,y2,y3,y4,y5,y6,y7,
+          s0,s1,s2,s3,s4,s5,s6;
+wire c0,c1,c2,c3,c4,c5,c6; 
+AND18 an0(y0,B,A[0]);
+AND18 an1(y1,B,A[1]);
+AND18 an2(y2,B,A[2]);
+AND18 an3(y3,B,A[3]);
+AND18 an4(y4,B,A[4]);
+AND18 an5(y5,B,A[5]);
+AND18 an6(y6,B,A[6]);
+AND18 an7(y7,B,A[7]);
+  
+add ad1(s0,c0,y1,1'b0,y0[7:1]);
+add ad2(s1,c1,y2,c0,s0[7:1]);
+add ad3(s2,c2,y3,c1,s1[7:1]);
+add ad4(s3,c3,y4,c2,s2[7:1]);
+add ad5(s4,c4,y5,c3,s3[7:1]);
+add ad6(s5,c5,y6,c4,s4[7:1]);
+add ad7(s6,c6,y7,c5,s5[7:1]);
+  
+mux_and ma8  (M[0], 1'b1,  y0[0]);
+mux_and ma9  (M[1], 1'b1,  s0[0]);
+mux_and ma10 (M[2], 1'b1,  s1[0]);
+mux_and ma11 (M[3], 1'b1,  s2[0]);
+mux_and ma12 (M[4], 1'b1,  s3[0]);
+mux_and ma13 (M[5], 1'b1,  s4[0]);
+mux_and ma14 (M[6], 1'b1,  s5[0]);
+mux_and ma15 (M[7], 1'b1,  s6[0]);
+mux_and ma16 (M[8], 1'b1,  s6[1]);
+mux_and ma17 (M[9], 1'b1,  s6[2]);
+mux_and ma18 (M[10], 1'b1,  s6[3]);
+mux_and ma19 (M[11], 1'b1,  s6[4]);
+mux_and ma20 (M[12], 1'b1,  s6[5]);
+mux_and ma21 (M[13], 1'b1,  s6[6]);
+mux_and ma22 (M[14], 1'b1,  s6[7]);
+mux_and ma23 (M[15], 1'b1,  c6);
+endmodule
+
+
+
+//Testbench for Multiplier
+`timescale 10ps/1ps //timescale = 1ns, time precision = 1ps
+module multiply_tb();
+reg [7:0]A,B;
+wire [15:0]M;
+multiply m1(.M(M), .A(A), .B(B));
+
+initial begin
+//$dumpfile("multiply.vcd");
+//$dumpvars(0, multiply_tb); //0 -> record signals of all sub-modules
+A = 8'b00000000;
+B = 8'b00000000;
+#10;
+A = 8'b11111111;
+B = 8'b11111111;
+#10;
+A = 8'b00001111;
+B = 8'b00001111;
+#10;
+A = 8'b00001111;
+B = 8'b11110000;
+$finish;
+end
+endmodule

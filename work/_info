@@ -1,0 +1,236 @@
+m255
+K3
+13
+cModel Technology
+Z0 dF:\SAKSHAM\BITS\Year_3\Semester 5\INSTR F313 - Analog & Digital VLSI Design\Assignment\Assignment 1\Verilog
+vadd
+!i10b 1
+Z1 !s100 dFaL6Hi^2hLO0LJlaQ<RA0
+Z2 Iz]kS5XAgWjS6[e3VgPhi:0
+Z3 V[ZTiW`YQb:TPYRn1o]^0B3
+Z4 dF:\SAKSHAM\BITS\Year_3\Semester 5\INSTR F313 - Analog & Digital VLSI Design\Assignment\Assignment 1\Final
+Z5 w1540182026
+Z6 8F:\SAKSHAM\BITS\Year_3\Semester 5\INSTR F313 - Analog & Digital VLSI Design\Assignment\Assignment 1\Final\8_bit_array_multiplier(Problem_32-b).v
+Z7 FF:\SAKSHAM\BITS\Year_3\Semester 5\INSTR F313 - Analog & Digital VLSI Design\Assignment\Assignment 1\Final\8_bit_array_multiplier(Problem_32-b).v
+L0 48
+Z8 OV;L;10.1d;51
+r1
+!s85 0
+31
+Z9 !s108 1540182062.393000
+Z10 !s107 F:\SAKSHAM\BITS\Year_3\Semester 5\INSTR F313 - Analog & Digital VLSI Design\Assignment\Assignment 1\Final\8_bit_array_multiplier(Problem_32-b).v|
+Z11 !s90 -reportprogress|300|-work|work|F:\SAKSHAM\BITS\Year_3\Semester 5\INSTR F313 - Analog & Digital VLSI Design\Assignment\Assignment 1\Final\8_bit_array_multiplier(Problem_32-b).v|
+!s101 -O0
+Z12 o-work work -O0
+vAND18
+!i10b 1
+Z13 !s100 3o[CB`lkWIiHQS4MOjMQ60
+Z14 IC:_c>9aP@_cof[zO`1>WH3
+Z15 Vm[mP7>cn8c>d?l;oc@4453
+R4
+R5
+R6
+R7
+L0 78
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!s101 -O0
+R12
+Z16 n@a@n@d18
+vand3
+Z17 !s100 gI2mZ@oXGN33fc^ZGM<AT0
+Z18 IGzn]McIzfJ;iR34gDP78`2
+Z19 VY40_MdR<A0MUnTJUS]M=]1
+R4
+Z20 w1539749195
+Z21 8F:/SAKSHAM/BITS/Year_3/Semester 5/INSTR F313 - Analog & Digital VLSI Design/Assignment/Assignment 1/Final/ami.v
+Z22 FF:/SAKSHAM/BITS/Year_3/Semester 5/INSTR F313 - Analog & Digital VLSI Design/Assignment/Assignment 1/Final/ami.v
+L0 61
+R8
+r1
+31
+Z23 !s108 1539749201.524000
+Z24 !s107 F:/SAKSHAM/BITS/Year_3/Semester 5/INSTR F313 - Analog & Digital VLSI Design/Assignment/Assignment 1/Final/ami.v|
+Z25 !s90 -reportprogress|300|-work|work|F:/SAKSHAM/BITS/Year_3/Semester 5/INSTR F313 - Analog & Digital VLSI Design/Assignment/Assignment 1/Final/ami.v|
+R12
+!i10b 1
+!s85 0
+!s101 -O0
+vand4
+Z26 IjGY5N=?d1]SGjR5N?H@4]1
+Z27 Ve=B8C4XNWKPFi8SkO^[FV0
+R4
+R20
+R21
+R22
+L0 69
+R8
+r1
+31
+R23
+R24
+R25
+R12
+Z28 !s100 HMd?HW<?>5F`JhFb:c;ZQ0
+!i10b 1
+!s85 0
+!s101 -O0
+vcompare
+Z29 !s100 Azc<dQIFMf0NBUo?ZX3_K3
+Z30 I?fU7;G?PoI@1U0B3[oaAz1
+Z31 VZf4TPCRM8fZV[nQkC]Hj01
+R4
+R20
+R21
+R22
+L0 1
+R8
+r1
+31
+R23
+R24
+R25
+R12
+!i10b 1
+!s85 0
+!s101 -O0
+vFA
+!i10b 1
+Z32 !s100 =D0EL:Ejn5[eNKCHNkzAM1
+Z33 IcbK;B@[i2?=LnT]TC@Y@K1
+Z34 Vm:LIeB=RXGQF?ING0BkRK2
+R4
+R5
+R6
+R7
+L0 36
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!s101 -O0
+R12
+n@f@a
+vHA
+!i10b 1
+Z35 !s100 iT7dCWb0<<icSBa?M_[dl3
+Z36 IcV1?I^QieYUdQdYDF68BC2
+Z37 VLI4;>3=m5Nne?V3dIb3aj3
+R4
+R5
+R6
+R7
+L0 15
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!s101 -O0
+R12
+n@h@a
+vmultiply
+!i10b 1
+Z38 !s100 2QiR^]`a3@P5X]VWmc6<D2
+Z39 IaHgFVzo2D;UO19>AANPI90
+Z40 VWDaLGgBHga]`oOjFj<hea0
+R4
+R5
+R6
+R7
+L0 95
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!s101 -O0
+R12
+vmultiply_tb
+!i10b 1
+Z41 !s100 QhAHMz8E=dmPFo=:o9VdB1
+Z42 I5II1G0fgMXL0;QXWoEZ5J3
+Z43 VRYDiVzfnRj]^`<Zc`KANL1
+R4
+R5
+R6
+R7
+Z44 L0 138
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!s101 -O0
+R12
+vmux
+!i10b 1
+Z45 !s100 3B6Zl5mnz7@W[L_MTed[A2
+Z46 IG37Wm[YH`1kBB951Bbf?O1
+Z47 VBho>z3ndZB6:_G6Vao`?Q2
+R4
+R5
+R6
+R7
+L0 2
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!s101 -O0
+R12
+vmux_and
+!i10b 1
+Z48 !s100 3A8D1iEVW7jjBTRAfAU7I0
+Z49 I:azB<FXnPa>MlLOYFkX<f2
+Z50 VP:7HQG;RJRYjeaKhm7YOh1
+R4
+R5
+R6
+R7
+L0 68
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!s101 -O0
+R12
+vmux_or
+!i10b 1
+Z51 !s100 banME`bCcH9aj0Nze0a0;3
+Z52 I1aF8fJP@C?[>Gj@IBbdBk0
+Z53 V4jjc^8bAHLf;5IF`b^]Cd1
+R4
+R5
+R6
+R7
+L0 27
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!s101 -O0
+R12
